@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Fund Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">FUND PREDICTOR</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">HOME</a></li>
+            <li><a href="{{ url_for('input_form') }}">RECOMMEND</a></li>
+            <li><a href="{{ url_for('contact') }}">CONTACT US</a></li>
+            <li><a href="{{ url_for('signup') }}">SIGN UP</a></li>
+        </ul>
+    </nav>
+    <header class="about-section">
+        <div class="overlay">
+            <h1>ABOUT FUND PREDICTION</h1>
+            <p>
+                The mutual fund predictor is an intelligent system that analyses mutual fund data using machine learning models. It helps users predict the performance of a mutual fund and recommends the best options based on specific preferences like fund type, minimum investment, and expected returns over time with a custom score. It assists investors in making informed financial decisions.
+            </p>
+        </div>
+    </header>
+</body>
+</html>

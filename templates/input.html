@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mutual Fund Inputs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='input.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">FUND PREDICTOR</div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">HOME</a></li>
+                <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+                <li><a href="{{ url_for('contact') }}">CONTACT US</a></li>
+                <li><a href="{{ url_for('signup') }}">SIGN UP</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 class="form-title">CHOOSE YOUR FUNDS</h1>
+        <div class="form-container">
+            <form method="post" action="/recommend">
+                <div class="form-group">
+                    <label for="fund-house">Fund House:</label>
+                    <select name="fund_house" id="fund-house">
+                        {% for house in fund_house %}
+                            <option value="{{ house }}">{{ house }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fund-type">Fund Type:</label>
+                    <select name="fund_type" id="fund-type">
+                        {% for type in fund_type %}
+                            <option value="{{ type }}">{{ type }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="years">Years to Invest (1/3/5):</label>
+                    <input type="number" name="years" id="years" required>
+                </div>
+                <div class="form-group">
+                    <label for="investment_type">Select Investment Type:</label>
+                    <select name="investment_type" id="investment_type" onchange="toggleInvestmentFields()">
+                        <option value="SIP">SIP</option>
+                        <option value="LumpSum">LumpSum</option>
+                    </select>
+                </div>
+                <div id="sip_input" class="form-group" style="display:none;">
+                    <label for="min_sip">Minimum SIP:</label>
+                    <input type="number" name="min_sip" id="min_sip" value="0">
+                </div>
+                <div id="lumpsum_input" class="form-group" style="display:none;">
+                    <label for="min_LumpSum">Minimum Lump Sum:</label>
+                    <input type="number" name="min_LumpSum" id="min_LumpSum" value="0">
+                </div>
+                <button type="submit" class="submit-btn">Recommend</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        function toggleInvestmentFields() {
+            const investmentType = document.getElementById("investment_type").value;
+            document.getElementById("sip_input").style.display = (investmentType === "SIP") ? "block" : "none";
+            document.getElementById("lumpsum_input").style.display = (investmentType === "LumpSum") ? "block" : "none";
+        }
+        // Initialize the form fields display based on the default selection
+        window.onload = toggleInvestmentFields;
+    </script>
+</body>
+</html>

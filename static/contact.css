@@ -1,0 +1,126 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling with background image and overlay */
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('/static/images/import.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+  }
+  
+  /* Header styling */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Logo styling */
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  
+  /* Navigation links styling */
+  header nav a {
+    margin-left: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  header nav a:hover {
+    color: #4CAF50; /* Highlight color on hover */
+  }
+  
+  /* Contact section styling */
+  .contact {
+    padding: 120px 40px 40px 40px; /* Top padding accounts for fixed header */
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .contact h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  
+  /* Contact cards container */
+  .email_address {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Individual contact card styling */
+  .card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  
+  .card:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .card p {
+    font-size: 16px;
+    color: #ffffff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    header nav {
+      margin-top: 10px;
+    }
+  
+    header nav a {
+      display: block;
+      margin: 5px 0;
+    }
+  
+    .email_address {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 100%;
+    }
+  }
+  

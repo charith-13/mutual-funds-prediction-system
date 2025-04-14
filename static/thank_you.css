@@ -1,0 +1,37 @@
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+}
+
+.nav-link {
+    margin-left: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+.thank-container {
+    margin-top: 100px;
+}
+
+.thank-container h1 {
+    color: #d60000;
+    font-size: 2rem;
+}

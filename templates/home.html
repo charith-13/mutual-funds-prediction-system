@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fund Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo" href="/home">FUND PREDICTOR</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+            <li><a href="{{ url_for('input_form') }}">RECOMMEND</a></li>
+            <li><a href="{{ url_for('contact') }}">CONTACT US</a></li>
+            <li><a href="{{ url_for('signup') }}">SIGN UP</a></li>
+        </ul>
+    </nav>
+    <header class="hero-section">
+        <div class="overlay">
+            <h1>INVEST IN A SMART WAY</h1>
+            <a href="{{ url_for('input_form') }}" class="btn">Get Started</a>
+        </div>
+    </header>
+</body>
+</html>
